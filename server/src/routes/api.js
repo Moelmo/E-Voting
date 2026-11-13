@@ -31,7 +31,7 @@ import {
   getAuditLogs
 } from '../controllers/adminController.js';
 import { authenticateAdmin, authenticateStudent } from '../middleware/auth.js';
-import { upload } from '../middleware/upload.js';
+import { importUpload, upload } from '../middleware/upload.js';
 
 const router = express.Router();
 
@@ -70,7 +70,7 @@ router.post('/admin/students/bulk-delete', bulkDeleteStudents);
 
 // Student Import/Export & QR
 router.get('/admin/students/template', getStudentTemplate);
-router.post('/admin/students/import/preview', upload.single('file'), previewImportStudents);
+router.post('/admin/students/import/preview', importUpload.single('file'), previewImportStudents);
 router.post('/admin/students/import', executeImportStudents);
 router.get('/admin/students/export', exportStudents);
 router.get('/admin/students/qr', getStudentQRCards);

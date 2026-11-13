@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const fileFilter = (req, file, cb) => {
+const imageFileFilter = (req, file, cb) => {
   const allowedExts = ['.jpg', '.jpeg', '.png', '.webp', '.svg'];
   const ext = path.extname(file.originalname).toLowerCase();
   if (allowedExts.includes(ext)) {
@@ -32,8 +32,20 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-export const upload = multer({
+const importFileFilter = (req, file, cb) => {
+  const allowedExts = ['.csv', '.xlsx'];
+  const ext = path.extname(file.originalname).toLowerCase();
+  if (allowedExts.includes(ext)) {
+    cb(null, true);
+  } else {
+    cb(new Error('Hanya file CSV (.csv) atau Excel (.xlsx) yang diperbolehkan!'));
+  }
+};
+
+const uploadOptions = {
   storage,
   limits: { fileSize: 5 * 1024 * 1024 }, // 5 MB
-  fileFilter
-});
+};
+
+export const upload = multer({ ...uploadOptions, fileFilter: imageFileFilter });
+export const importUpload = multer({ ...uploadOptions, fileFilter: importFileFilter });
