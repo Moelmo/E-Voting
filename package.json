@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev": "npm run dev:server",
     "dev:server": "cd server && npm run dev",
-    "dev:client": "cd client && npm run dev",
-    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "install:all": "npm install && cd server && npm install",
     "seed": "cd server && npm run seed"
   },
   "devDependencies": {

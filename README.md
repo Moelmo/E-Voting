@@ -20,12 +20,7 @@ Di direktori root project, jalankan:
 ```bash
 npm run install:all
 ```
-*Atau lakukan instalasi mandiri:*
-```bash
-npm install
-cd server && npm install
-cd ../client && npm install
-```
+Frontend development source tidak tersedia di repository ini; aplikasi memakai frontend build yang tersedia di `client/dist`.
 
 ### 2. Konfigurasi Lingkungan (.env)
 Salin `.env.example` ke `server/.env`:
@@ -48,8 +43,7 @@ npm run dev
 ```
 
 Aplikasi akan otomatis berjalan pada:
-- **Frontend (Client)**: [http://localhost:5173](http://localhost:5173)
-- **Backend API (Server)**: [http://localhost:5000](http://localhost:5000)
+- **Aplikasi dan API**: [http://localhost:5000](http://localhost:5000)
 
 *Catatan: Database dan seeder data awal akan dijalankan secara otomatis saat server pertama kali diaktifkan.*
 

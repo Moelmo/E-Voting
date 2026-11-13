@@ -14,6 +14,7 @@ import { runSeed } from '../seed.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const clientDistDir = path.resolve(__dirname, '../../client/dist');
 
 // Inisialisasi DB & Auto-seed jika belum ada
 initDatabase();
@@ -53,6 +54,13 @@ app.use('/uploads', express.static(uploadDir));
 
 // API Routes
 app.use('/api', apiRouter);
+
+// Serve the checked-in frontend build from the same origin as the API.
+app.use(express.static(clientDistDir));
+app.get('*', (req, res, next) => {
+  if (req.path === '/api' || req.path.startsWith('/api/')) return next();
+  res.sendFile(path.join(clientDistDir, 'index.html'));
+});
 
 // Central Error Handler
 app.use((err, req, res, next) => {
