@@ -55,10 +55,10 @@ Aplikasi akan otomatis berjalan pada:
 |---|---|---|---|
 | **Admin** | `administrator` | `adminosis` | Akses panel admin penuh via `/admin/login` |
 | **Password Spoiler** | - | `spoiler123` | Membuka overview & rekapitulasi perolehan suara |
-| **Siswa Contoh 1** | `24011835` | (Cukup NIS) | Taufiq Iman Putra (XII MIPA 1) |
-| **Siswa Contoh 2** | `24011836` | (Cukup NIS) | Ahmad Fauzi Rahman (XII MIPA 2) |
-| **Siswa Contoh 3** | `24011837` | (Cukup NIS) | Siti Nurhaliza (XII IPS 1) |
-| **Siswa Contoh 4** | `24011838` | (Cukup NIS) | Budi Santoso (XII IPS 2) |
+| **Siswa Contoh 1** | `24011835` | (Cukup NIS) | Taufiq Iman Putra (XII TJKT 4) |
+| **Siswa Contoh 2** | `24011836` | (Cukup NIS) | Ahmad Fauzi Rahman (XII TJKT 2) |
+| **Siswa Contoh 3** | `24011837` | (Cukup NIS) | Siti Nurhaliza (XII DKV 1) |
+| **Siswa Contoh 4** | `24011838` | (Cukup NIS) | Budi Santoso (XII RPL 2) |
 
 ---
 
